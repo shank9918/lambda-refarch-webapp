@@ -442,7 +442,7 @@
 		"LambdaCreationHelperStack": {
 					"Type" : "AWS::CloudFormation::Stack",
 					"Properties" : {
-						"TemplateURL" : {"Fn::Join": ["/", ["https://s3.amazonaws.com", {"Ref": "CodeBucket"}, {"Ref": "CodeKeyPrefix"}, "lambda-creation-helper.template"]]},
+						"TemplateURL" : {"Fn::Join": ["/", ["https://github.com/shank9918/lambda-refarch-webapp/blob/master/cloudformation/lambda-creation-helper.template"]]},
 						"Parameters" : {
 							"CodeBucket" : {"Ref": "CodeBucket"},
 							"CodeKeyPrefix": { "Ref": "CodeKeyPrefix" },
@@ -458,7 +458,7 @@
 		"ApiCreationHelperStack": {
           "Type" : "AWS::CloudFormation::Stack",
           "Properties" : {
-            "TemplateURL" : {"Fn::Join": ["/", ["https://s3.amazonaws.com", {"Ref": "CodeBucket"}, {"Ref": "CodeKeyPrefix"}, "api-creation-helper.template"]]},
+            "TemplateURL" : {"Fn::Join": ["/", ["https://github.com/shank9918/lambda-refarch-webapp/blob/master/cloudformation/api-creation-helper.template"]]},
             "Parameters" : {
 							"APIStageName" : {"Ref": "APIStageName"},
               "AuthenticateUserFunction": { "Fn::GetAtt": ["LambdaCreationHelperStack", "Outputs.AuthenticateUserFunction"] },
@@ -523,7 +523,7 @@
 				"CognitoCreationHelperStack": {
           "Type" : "AWS::CloudFormation::Stack",
           "Properties" : {
-            "TemplateURL" : {"Fn::Join": ["/", ["https://s3.amazonaws.com", {"Ref": "CodeBucket"}, {"Ref": "CodeKeyPrefix"}, "cognito-creation-helper.template"]]},
+            "TemplateURL" : {"Fn::Join": ["/", ["https://github.com/shank9918/lambda-refarch-webapp/blob/master/cloudformation/cognito-creation-helper.template"]]},
             "Parameters" : {
               "CognitoPoolDevID": { "Ref": "CognitoPoolDevID" },
 							"UnauthenticatedBlogUserPolicy" : {"Ref": "UnauthenticatedBlogUserPolicy"},
@@ -602,7 +602,7 @@
 				"ConfigHelperStack": {
 				 "Type" : "AWS::CloudFormation::Stack",
 				 "Properties" : {
-					 "TemplateURL" : {"Fn::Join": ["/", ["https://s3.amazonaws.com", {"Ref": "CodeBucket"}, {"Ref": "CodeKeyPrefix"}, "config-helper.template"]]},
+					 "TemplateURL" : {"Fn::Join": ["/", ["https://github.com/shank9918/lambda-refarch-webapp/blob/master/cloudformation/config-helper.template"]]},
 					 "Parameters" : {
 						 "ConfigTable": "aws-serverless-config"
 					 },
